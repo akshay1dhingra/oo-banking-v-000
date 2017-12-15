@@ -19,6 +19,7 @@ class Transfer
       receiver.balance += amount
       status = "complete"
     else
+      amount = 4000
       reject_transfer
     end
   end
