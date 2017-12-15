@@ -25,7 +25,7 @@ class Transfer
 
   def reverse_transfer
     binding.pry
-    if valid? && receiver.balance < amount && self.status == "completed"
+    if valid? && receiver.balance > amount && self.status == "completed"
       receiver.balance -= amount
       sender.balance += amount
       self.status = "pending"
