@@ -17,7 +17,7 @@ class Transfer
     if valid? && sender.balance > amount && status == "pending"
       sender.balance -= amount
       receiver.balance += amount
-      self.status = "complete"
+      status = "complete"
     else
       reject_transfer
     end
@@ -34,7 +34,7 @@ class Transfer
   end
 
   def reject_transfer
-    self.status = "Transaction rejected. Please check your account balance."
+    status = "Transaction rejected. Please check your account balance."
     "Transaction rejected. Please check your account balance."
   end
 end
